@@ -1,0 +1,19 @@
+name = "GLua"
+grammar = "lua"
+path_suffixes = ["lua"]
+line_comments = ["-- ", "--- "]
+block_comment = ["--[[", "]]"]
+autoclose_before = ";:.,=}])>"
+brackets = [
+    { start = "{", end = "}", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["string"] },
+    { start = "'", end = "'", close = true, newline = false, not_in = ["string"] },
+]
+collapsed_placeholder = "--[ ... ]--"
+
+# Fallback indent rules, mirroring zed-extensions/lua. Handles `end` / `until`
+# even when tree-sitter cannot yet produce a complete parse tree.
+increase_indent_pattern = "^\\s*(if|elseif|else|do|while|for|repeat|((local|global)\\s+)?function|.+=\\s*function|.*[,(]\\s*function)\\b"
+decrease_indent_pattern = "^\\s*(elseif|else|end|until)\\b"

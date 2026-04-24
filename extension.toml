@@ -1,0 +1,17 @@
+id = "gmod-glua"
+name = "GLua (Garry's Mod)"
+description = "Garry's Mod GLua language support: grammar, snippets, and LuaLS with the glua-api-snippets addon for wiki-powered completions, hovers, and go-to-definition."
+version = "0.1.0"
+schema_version = 1
+authors = ["louzzy"]
+repository = "https://github.com/bellil-dev/gmod-zed"
+
+snippets = ["./snippets/glua.json"]
+
+[grammars.lua]
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-lua"
+commit = "d76023017f7485eae629cb60d406c7a1ca0f40c9"
+
+[language_servers.glua-language-server]
+name = "LuaLS (GLua)"
+languages = ["GLua"]

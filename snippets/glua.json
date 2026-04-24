@@ -1,0 +1,227 @@
+{
+    "for-i": {
+        "prefix": "for-i",
+        "body": [
+            "for ${1:var} = ${2:index}, ${3:count} do",
+            "\t$0",
+            "end"
+        ],
+        "description": "Numeric for loop"
+    },
+    "for-pairs": {
+        "prefix": "for-pairs",
+        "body": [
+            "for ${1:key}, ${2:value} in pairs(${3:table}) do",
+            "\t$0",
+            "end"
+        ],
+        "description": "pairs() loop"
+    },
+    "for-ipairs": {
+        "prefix": "for-ipairs",
+        "body": [
+            "for ${1:key}, ${2:value} in ipairs(${3:table}) do",
+            "\t$0",
+            "end"
+        ],
+        "description": "ipairs() loop"
+    },
+    "Keyword - then": {
+        "prefix": "then",
+        "body": [
+            "then",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) then"
+    },
+    "Keyword - do": {
+        "prefix": "do",
+        "body": [
+            "do",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) do"
+    },
+    "Keyword - for": {
+        "prefix": "for",
+        "body": "for $0",
+        "description": "(Keyword) for"
+    },
+    "Keyword - in": {
+        "prefix": "in",
+        "body": "in $0",
+        "description": "(Keyword) in"
+    },
+    "Keyword - goto": {
+        "prefix": "goto",
+        "body": "goto ${1:block}",
+        "description": "(Keyword) goto"
+    },
+    "Keyword - goto block": {
+        "prefix": "::",
+        "body": "::${1:block}::",
+        "description": "(Keyword) goto block"
+    },
+    "Keyword - if": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) then",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) if"
+    },
+    "Keyword - elseif": {
+        "prefix": "elseif",
+        "body": [
+            "elseif (${1:condition}) then",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) elseif"
+    },
+    "Keyword - else": {
+        "prefix": "else",
+        "body": [
+            "else",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) else"
+    },
+    "Keyword - while": {
+        "prefix": "while",
+        "body": [
+            "while (${1:condition}) do",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) while"
+    },
+    "Keyword - repeat": {
+        "prefix": "repeat",
+        "body": [
+            "repeat",
+            "\t$0",
+            "until (${1:condition})"
+        ],
+        "description": "(Keyword) repeat"
+    },
+    "Keyword - continue": {
+        "prefix": "continue",
+        "body": "continue $0",
+        "description": "(Keyword) continue (GLua extension)"
+    },
+    "Keyword - break": {
+        "prefix": "break",
+        "body": "break $0",
+        "description": "(Keyword) break"
+    },
+    "Keyword - return": {
+        "prefix": "return",
+        "body": "return $0",
+        "description": "(Keyword) return"
+    },
+    "Keyword - or": {
+        "prefix": "or",
+        "body": "or $0",
+        "description": "(Keyword) or"
+    },
+    "Keyword - and": {
+        "prefix": "and",
+        "body": "and $0",
+        "description": "(Keyword) and"
+    },
+    "Keyword - local": {
+        "prefix": "local",
+        "body": "local $0",
+        "description": "(Keyword) local"
+    },
+    "Keyword - function": {
+        "prefix": "function",
+        "body": [
+            "function ${1:foo}(${2:arguments})",
+            "\t$0",
+            "end"
+        ],
+        "description": "(Keyword) function"
+    },
+    "Keyword - true": {
+        "prefix": "true",
+        "body": "true $0",
+        "description": "(Keyword) true"
+    },
+    "Keyword - false": {
+        "prefix": "false",
+        "body": "false $0",
+        "description": "(Keyword) false"
+    },
+    "Keyword - nil": {
+        "prefix": "nil",
+        "body": "nil $0",
+        "description": "(Keyword) nil"
+    },
+    "Keyword - NULL": {
+        "prefix": "NULL",
+        "body": "NULL $0",
+        "description": "(Keyword) NULL"
+    },
+    "Keyword - _G": {
+        "prefix": "_G",
+        "body": "_G $0",
+        "description": "(Keyword) _G"
+    },
+    "Keyword - _VERSION": {
+        "prefix": "_VERSION",
+        "body": "_VERSION $0",
+        "description": "(Keyword) _VERSION"
+    },
+    "Keyword - self": {
+        "prefix": "self",
+        "body": "self",
+        "description": "(Keyword) self"
+    },
+    "Keyword - end": {
+        "prefix": "end",
+        "body": "end",
+        "description": "(Keyword) end"
+    },
+    "hook.Add": {
+        "prefix": "hook.Add",
+        "body": [
+            "hook.Add(\"${1:EventName}\", \"${2:UniqueID}\", function(${3:args})",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Register a Garry's Mod hook"
+    },
+    "net.Receive": {
+        "prefix": "net.Receive",
+        "body": [
+            "net.Receive(\"${1:MessageName}\", function(${2:len}${3:, ply})",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Handle a net message"
+    },
+    "concommand.Add": {
+        "prefix": "concommand.Add",
+        "body": [
+            "concommand.Add(\"${1:command_name}\", function(ply, cmd, args, argStr)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Register a Garry's Mod console command"
+    },
+    "timer.Create": {
+        "prefix": "timer.Create",
+        "body": [
+            "timer.Create(\"${1:UniqueID}\", ${2:1}, ${3:0}, function()",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Register a repeating/one-shot timer"
+    }
+}
